@@ -1,0 +1,29 @@
+class Node:
+  def __init__(self,key):
+    self.left=None
+    self.right=None
+    self.value=key
+    
+class BinaryTree:
+  def __init__(self):
+    self.root1=None
+    
+  def _inorder_recursive(self,node):
+    if node:
+      self._inorder_recursive(node.left)
+      print(node.value,end=" ")
+      self._inorder_recursive(node.right)
+    
+root=Node(10)
+root.left=Node(34)
+root.right=Node(56)
+root.left.left=Node(3)
+root.left.right=Node(4)
+root.right.left=Node(12)
+root.right.right=Node(45)
+tree=BinaryTree()
+tree.root1=root
+
+print("Inorder Traversal:")
+tree._inorder_recursive(tree.root1)
+print()
